@@ -15,19 +15,20 @@ int print_string(va_list list, char buffer[])
 {
 	char *string = va_arg(list, char *);
 	int string_length = 0;
+
 	UNUSED(buffer);
-	
+
 	while (*(string + string_length) != '\0')
 		string_length++;
 
-	return(write(1, string, string_length));
+	return (write(1, string, string_length));
 }
 
 int print_percent(va_list list, char buffer[])
 {
 	UNUSED(list);
 	UNUSED(buffer);
-	
+
 	return (write(1, "%%", 1));
 }
 

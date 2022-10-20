@@ -7,7 +7,8 @@
 #define BUFFER_SIZE 1024
 #define UNUSED(i) (void)(i)
 
-typedef struct fmt {
+typedef struct fmt
+{
 	char data_type;
 	int (*print_func)(va_list, char[]);
 } fmt_t;
