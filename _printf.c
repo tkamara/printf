@@ -2,6 +2,12 @@
 
 void print_buffer(char buffer[], int *bytes);
 
+/**
+ * _printf - recreates the standard printf() function
+ * @format: input string with possible format specifiers
+ *
+ * Return: number of characters printed to standard output
+ */
 int _printf(const char *format, ...)
 {
 	int format_counter;
@@ -16,7 +22,8 @@ int _printf(const char *format, ...)
 
 	va_start(arg_list, format);
 
-	for (format_counter = 0; format && (*(format + format_counter)) != '\0'; format_counter++)
+	for (format_counter = 0; format && (*(format + format_counter)) != '\0';
+			format_counter++)
 	{
 		if (*(format + format_counter) != '%')
 		{
@@ -39,6 +46,13 @@ int _printf(const char *format, ...)
 	return (printed_bytes);
 }
 
+/**
+ * print_buffer - prints the contents of the input buffer to standard output
+ * @buffer: input (character) buffer
+ * @bytes: number of already printed characters
+ *
+ * Return: nothing
+ */
 void print_buffer(char buffer[], int *bytes)
 {
 	if (*bytes > 0)

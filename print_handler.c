@@ -1,5 +1,14 @@
 #include "main.h"
 
+/**
+ * print_handler - prints an input argument depending on its data type
+ * @fmt: input string containing format specifiers
+ * @index: the index of the format specifier in the input fmt string
+ * @list: char array of arbitrary number of unnamed arguments
+ * @buffer: character buffer carrying characters to print to stdout
+ *
+ * Return: number of printed characters to standard output
+ */
 int print_handler(const char *fmt, int *index, va_list list, char buffer[])
 {
 	int counter, unknown_length = 0, printed_chars = -1;
